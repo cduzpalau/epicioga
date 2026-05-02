@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sand-50: #fdfaf6;
+  --color-sand-100: #f5eedf;
+  --color-sand-200: #eadac0;
+  --color-sage-500: #8ba888;
+  --color-sage-600: #708a6d;
+  --color-sage-700: #556c53;
+  --color-terracotta-500: #d47a61;
+  --color-terracotta-600: #b85e46;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-sand-50);
+    color: #333;
+    font-family: var(--font-inter);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-outfit);
+    color: var(--color-sage-700);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  }
+}
