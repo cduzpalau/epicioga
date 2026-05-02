@@ -1,17 +1,9 @@
-import { getServerSession } from "next-auth/next"
-// import { redirect } from "next/navigation"
-import { authOptions } from "../api/auth/[...nextauth]/route"
+// import { getServerSession } from "next-auth/next"
+// import { authOptions } from "../api/auth/[...nextauth]/route"
 
 export default async function AdminPanel() {
-  let session: any = await getServerSession(authOptions)
-
-  // Autenticació desactivada temporalment
-  // if (!session || session.user.role !== "ADMIN") {
-  //   redirect("/")
-  // }
-  if (!session) {
-    session = { user: { name: "Admin Prova", role: "ADMIN" } }
-  }
+  // Autenticació desactivada temporalment, evitem trucar a NextAuth en producció
+  let session = { user: { name: "Admin Prova", role: "ADMIN" } }
 
   return (
     <div className="min-h-screen bg-sand-50 p-8">

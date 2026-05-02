@@ -1,17 +1,9 @@
-import { getServerSession } from "next-auth/next"
-// import { redirect } from "next/navigation"
-import { authOptions } from "../api/auth/[...nextauth]/route"
+// import { getServerSession } from "next-auth/next"
+// import { authOptions } from "../api/auth/[...nextauth]/route"
 
 export default async function DashboardAlumne() {
-  let session = await getServerSession(authOptions)
-
-  // Autenticació desactivada temporalment
-  // if (!session) {
-  //   redirect("/api/auth/signin")
-  // }
-  if (!session) {
-    session = { user: { name: "Alumne de Prova", email: "alumne@epicioga.com" } } as any
-  }
+  // Autenticació desactivada temporalment, evitem trucar a NextAuth en producció per no requerir variables d'entorn secretes
+  let session = { user: { name: "Alumne de Prova", email: "alumne@epicioga.com" } } as any
 
   return (
     <div className="p-8 max-w-5xl mx-auto">
